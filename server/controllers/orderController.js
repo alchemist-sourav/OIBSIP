@@ -46,6 +46,7 @@ const createOrder = async (req, res) => {
 
 
         const order = await Order.create({
+            userId: req.user.id,
             pizza,
             totalPrice,
             paymentStatus: req.body.paymentStatus || "Pending"
@@ -71,8 +72,12 @@ const createOrder = async (req, res) => {
 const getOrders = async (req, res) => {
 
     try {
-
-        const orders = await Order.find();
+        let orders;
+        if (req.user.role === "admin") {
+            orders = await Order.find().populate("userId", "name email");
+        } else {
+            orders = await Order.find({ userId: req.user.id });
+        }
 
         res.json(orders);
 

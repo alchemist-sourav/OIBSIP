@@ -1,4 +1,6 @@
 const express = require("express");
+const protect = require("../middleware/authMiddleware");
+const adminOnly = require("../middleware/adminMiddleware");
 
 const router = express.Router();
 
@@ -9,11 +11,11 @@ const {
 } = require("../controllers/orderController");
 
 
-router.post("/", createOrder);
+router.post("/", protect, createOrder);
 
-router.get("/", getOrders);
+router.get("/", protect, getOrders);
 
-router.put("/:id", updateOrderStatus);
+router.put("/:id", protect, adminOnly, updateOrderStatus);
 
 
 module.exports = router;

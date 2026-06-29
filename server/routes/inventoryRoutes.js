@@ -1,4 +1,6 @@
 const express = require("express");
+const protect = require("../middleware/authMiddleware");
+const adminOnly = require("../middleware/adminMiddleware");
 
 const router = express.Router();
 
@@ -8,13 +10,10 @@ const {
     updateItemStock
 } = require("../controllers/inventoryController");
 
-
-// TEMP TEST ROUTES
-
-router.post("/", createItem);
+router.post("/", protect, adminOnly, createItem);
 
 router.get("/", getItems);
 
-router.put("/:id", updateItemStock);
+router.put("/:id", protect, adminOnly, updateItemStock);
 
 module.exports = router;
