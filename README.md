@@ -120,11 +120,39 @@ npm start
 
 ## 📸 Screenshots
 
-*(To be added by the maintainer in the `/screenshots` folder)*
-- Landing Page
-- Visual Pizza Builder
-- User Dashboard & Real-time Tracking
-- Admin Analytics & Inventory Control
+Here is a glimpse of the Pieza application:
+
+### User Experience
+**Landing Page**
+![Landing Page](./screenshots/landing-page.png)
+
+**Authentication (Login & Register)**
+![Login](./screenshots/login.png)
+![Register](./screenshots/register.png)
+
+**Visual Pizza Builder**
+![Pizza Builder](./screenshots/pizza-builder.png)
+
+**Cart, Checkout & Payment**
+![Cart](./screenshots/cart.png)
+![Checkout](./screenshots/checkout.png)
+![Payment Success](./screenshots/payment-success.png)
+
+**Real-Time Tracking**
+![Tracking](./screenshots/tracking.png)
+
+### Admin Controls
+**Dashboard Overview**
+![Admin Dashboard](./screenshots/admin-dashboard.png)
+
+**Inventory & Stock Management**
+![Inventory](./screenshots/inventory.png)
+
+**Pizza Management**
+![Pizza Management](./screenshots/pizza-management.png)
+
+**Analytics**
+![Analytics](./screenshots/analytics.png)
 
 ---
 
